@@ -5,6 +5,10 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('DockerHub')
 	}
 
+    parameters{
+      string(defaultValue: '9090', description: 'Port used in this build.', name: 'PORT')
+    }
+
     stages{
 		stage('Login to Docker Hub') {
 
@@ -24,7 +28,7 @@ pipeline {
 		stage('Run container') {
 
 			steps {
-				sh "docker run -d -p 4000:4000 --name MySimpleWebContainer mikesoroceanu/simplewebapp-npm-docker"
+				sh "docker run -d -p {params.PORT}:4000 --name MySimpleWebContainer mikesoroceanu/simplewebapp-npm-docker"
 			}
 		}
 	
