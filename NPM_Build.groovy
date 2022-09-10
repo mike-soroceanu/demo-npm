@@ -1,8 +1,7 @@
 pipeline {
     agent {label 'slave01'}
 
-    tools {
-  }
+
 
 
     environment {
