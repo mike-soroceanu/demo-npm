@@ -9,11 +9,7 @@ pipeline {
 	}
 
     stages{
-        stage ('Install NPM on slvae machine') {
-            steps {
-                sh "npm install -g npm"
-            }
-        }
+
 
 
         stage ('Build container') {
