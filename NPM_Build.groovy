@@ -1,7 +1,9 @@
 pipeline {
     agent {label 'slave01'}
 
-
+    tools {
+        npm "npm"
+    }
 
 
     environment {
@@ -10,7 +12,11 @@ pipeline {
 
     stages{
 
-
+        stage ('Install npm') {
+            steps {
+                sh "npm install -g npm"
+            }
+        }   
 
         stage ('Build container') {
             steps {
