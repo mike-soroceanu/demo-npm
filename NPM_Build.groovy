@@ -2,7 +2,7 @@ pipeline {
     agent {label 'slave01'}
 
     tools {
-        nodejs "npm"
+        nodejs "node"
     }
 
 
